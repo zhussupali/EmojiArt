@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="ipad9_7" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -15,13 +15,41 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="abc-fi-Dip">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sLH-XL-fb4" customClass="EmojiArtView" customModule="EmojiArt" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="sLH-XL-fb4" secondAttribute="trailing" id="26J-jp-zoM"/>
+                                    <constraint firstAttribute="bottom" secondItem="sLH-XL-fb4" secondAttribute="bottom" id="Hi4-np-t6s"/>
+                                    <constraint firstItem="sLH-XL-fb4" firstAttribute="top" secondItem="abc-fi-Dip" secondAttribute="top" id="TI6-f4-6wu"/>
+                                    <constraint firstItem="sLH-XL-fb4" firstAttribute="leading" secondItem="abc-fi-Dip" secondAttribute="leading" id="uNZ-qW-L1L"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="abc-fi-Dip" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="2RI-N7-gMR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="abc-fi-Dip" secondAttribute="bottom" id="Fnh-r5-TSe"/>
+                            <constraint firstItem="abc-fi-Dip" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ho6-Yc-Xny"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="abc-fi-Dip" secondAttribute="trailing" id="WQK-N7-wIR"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dropZone" destination="abc-fi-Dip" id="gBH-Cy-flU"/>
+                        <outlet property="emojiArtView" destination="sLH-XL-fb4" id="3Ju-at-f3a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-197" y="72"/>
+            <point key="canvasLocation" x="-197.4609375" y="71.875"/>
         </scene>
     </scenes>
     <resources>
