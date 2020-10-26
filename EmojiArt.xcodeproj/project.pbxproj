@@ -14,6 +14,7 @@
 		888489EC254461350007C9B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 888489EA254461350007C9B2 /* LaunchScreen.storyboard */; };
 		888489F8254463A70007C9B2 /* EmojiArtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888489F7254463A70007C9B2 /* EmojiArtViewController.swift */; };
 		88E719AE25458A7700C3DFA6 /* EmojiArtView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E719AD25458A7700C3DFA6 /* EmojiArtView.swift */; };
+		88E719B1254599CD00C3DFA6 /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E719B0254599CD00C3DFA6 /* ImageFetcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		888489ED254461350007C9B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		888489F7254463A70007C9B2 /* EmojiArtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiArtViewController.swift; sourceTree = SOURCE_ROOT; };
 		88E719AD25458A7700C3DFA6 /* EmojiArtView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiArtView.swift; sourceTree = "<group>"; };
+		88E719B0254599CD00C3DFA6 /* ImageFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFetcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				888489F7254463A70007C9B2 /* EmojiArtViewController.swift */,
+				88E719B0254599CD00C3DFA6 /* ImageFetcher.swift */,
 				888489E5254461330007C9B2 /* Main.storyboard */,
 				88E719AD25458A7700C3DFA6 /* EmojiArtView.swift */,
 				888489F4254462490007C9B2 /* Supporting Files */,
@@ -152,6 +155,7 @@
 				888489F8254463A70007C9B2 /* EmojiArtViewController.swift in Sources */,
 				888489E2254461330007C9B2 /* SceneDelegate.swift in Sources */,
 				88E719AE25458A7700C3DFA6 /* EmojiArtView.swift in Sources */,
+				88E719B1254599CD00C3DFA6 /* ImageFetcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
