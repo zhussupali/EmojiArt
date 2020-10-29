@@ -76,17 +76,18 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="abc-fi-Dip">
                                 <rect key="frame" x="0.0" y="50" width="703.5" height="718"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sLH-XL-fb4" customClass="EmojiArtView" customModule="EmojiArt" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="703.5" height="718"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    </view>
+                                    <scrollView verifyAmbiguity="off" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" placeholderIntrinsicWidth="604" placeholderIntrinsicHeight="659" translatesAutoresizingMaskIntoConstraints="NO" id="b5X-VJ-ikD">
+                                        <rect key="frame" x="0.0" y="0.0" width="696" height="710"/>
+                                        <viewLayoutGuide key="contentLayoutGuide" id="oAl-3B-2Ct"/>
+                                        <viewLayoutGuide key="frameLayoutGuide" id="krf-wd-CFG"/>
+                                    </scrollView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="sLH-XL-fb4" secondAttribute="trailing" id="26J-jp-zoM"/>
-                                    <constraint firstAttribute="bottom" secondItem="sLH-XL-fb4" secondAttribute="bottom" id="Hi4-np-t6s"/>
-                                    <constraint firstItem="sLH-XL-fb4" firstAttribute="top" secondItem="abc-fi-Dip" secondAttribute="top" id="TI6-f4-6wu"/>
-                                    <constraint firstItem="sLH-XL-fb4" firstAttribute="leading" secondItem="abc-fi-Dip" secondAttribute="leading" id="uNZ-qW-L1L"/>
+                                    <constraint firstAttribute="trailing" secondItem="b5X-VJ-ikD" secondAttribute="trailing" id="4cr-kC-Pvi"/>
+                                    <constraint firstAttribute="bottom" secondItem="b5X-VJ-ikD" secondAttribute="bottom" id="JFw-ty-luh"/>
+                                    <constraint firstItem="b5X-VJ-ikD" firstAttribute="leading" secondItem="abc-fi-Dip" secondAttribute="leading" id="YCW-BW-i1t"/>
+                                    <constraint firstItem="b5X-VJ-ikD" firstAttribute="top" secondItem="abc-fi-Dip" secondAttribute="top" id="j16-sc-KDv"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -101,12 +102,12 @@
                     </view>
                     <connections>
                         <outlet property="dropZone" destination="abc-fi-Dip" id="gBH-Cy-flU"/>
-                        <outlet property="emojiArtView" destination="sLH-XL-fb4" id="3Ju-at-f3a"/>
+                        <outlet property="scrollView" destination="b5X-VJ-ikD" id="Uif-Ny-fxv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-255" y="72"/>
+            <point key="canvasLocation" x="-255.46874999999997" y="71.875"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qEz-JF-K8W">
