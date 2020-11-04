@@ -133,8 +133,47 @@ class EmojiArtViewController: UIViewController, UIDropInteractionDelegate, UIScr
         
     }
     
-    func collectionView(_ collectionView: UICollectionView, performDropWith coordinator: UICollectionViewDropCoordinator) {
-        
+    func collectionView(
+        _ collectionView: UICollectionView,
+        performDropWith coordinator: UICollectionViewDropCoordinator
+    ){
+        let destinationIndexPath = coordinator.destinationIndexPath ?? IndexPath(item: 0, section: 0)
+         
+        for item in coordinator.items {
+            if let sourceIndexPath = item.sourceIndexPath {
+                
+                //assigned item.dragItem.localObject in func dragItems(at indexPath: IndexPath) -> [UIDragItem]
+                if let attributedString = item.dragItem.localObject as? NSAttributedString {
+                    
+                    // do not use update methods, performBatchUpdates instead
+                    collectionView.performBatchUpdates({
+                        emojis.remove(at: sourceIndexPath.item)
+                        emojis.insert(attributedString.string, at: destinationIndexPath.item)
+                        collectionView.deleteItems(at: [sourceIndexPath])
+                        collectionView.insertItems(at: [destinationIndexPath])
+                    })
+                    coordinator.drop(item.dragItem, toItemAt: destinationIndexPath) // for animation
+                }
+            } else {
+                let placeholderContext = coordinator.drop(item.dragItem, to: UICollectionViewDropPlaceholder(
+                                                            insertionIndexPath: destinationIndexPath,
+                                                            reuseIdentifier: "DropPlaceholderCell")
+                )
+                item.dragItem.itemProvider.loadObject(ofClass: NSAttributedString.self) { (provider, error) in
+                    
+                    DispatchQueue.main.async {
+                        if let attributedString = provider as? NSAttributedString {
+                            placeholderContext.commitInsertion(dataSourceUpdates: { insertionIndexPath in
+                                self.emojis.insert(attributedString.string, at: insertionIndexPath.item)
+                            })
+                        } else {
+                            placeholderContext.deletePlaceholder()
+                        }
+                    }
+                    
+                }
+            }
+        }
     }
     
     //MARK: - Dropping Background
