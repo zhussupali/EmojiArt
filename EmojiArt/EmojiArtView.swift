@@ -11,7 +11,7 @@ class EmojiArtView: UIView, UIDropInteractionDelegate {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setup()
+        setup() 
     }
     
     required init?(coder aDecoder : NSCoder) {
