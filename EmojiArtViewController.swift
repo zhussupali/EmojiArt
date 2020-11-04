@@ -9,8 +9,8 @@ import UIKit
 
 class EmojiArtViewController: UIViewController, UIDropInteractionDelegate, UIScrollViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDragDelegate, UICollectionViewDropDelegate  {
     
-
-
+    
+    
     @IBOutlet weak var dropZone: UIView! {
         didSet {
             dropZone.addInteraction(UIDropInteraction(delegate: self))
@@ -138,7 +138,7 @@ class EmojiArtViewController: UIViewController, UIDropInteractionDelegate, UIScr
         performDropWith coordinator: UICollectionViewDropCoordinator
     ){
         let destinationIndexPath = coordinator.destinationIndexPath ?? IndexPath(item: 0, section: 0)
-         
+        
         for item in coordinator.items {
             if let sourceIndexPath = item.sourceIndexPath {
                 
