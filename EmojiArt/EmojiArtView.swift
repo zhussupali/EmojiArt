@@ -11,7 +11,7 @@ class EmojiArtView: UIView, UIDropInteractionDelegate {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setup() 
+        setup()
     }
     
     required init?(coder aDecoder : NSCoder) {
@@ -49,12 +49,15 @@ class EmojiArtView: UIView, UIDropInteractionDelegate {
         }
     }
     
+    var scale : CGFloat = 0.75
+    
     private func addLabel(with attributedString: NSAttributedString, centeredAt point : CGPoint) {
         let label = UILabel()
         label.attributedText = attributedString
         label.center = point
         label.backgroundColor = .clear
         label.sizeToFit()
+        addEmojiArtGestureRecognizers(to: label)
         addSubview(label)
     }
     

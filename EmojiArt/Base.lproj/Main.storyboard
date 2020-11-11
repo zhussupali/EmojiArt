@@ -143,6 +143,56 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="80" height="80"/>
                                     </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="AddEmojiButtonCell" id="QF9-jd-tOv">
+                                        <rect key="frame" x="180" y="0.0" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="98x-zy-MjC">
+                                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hfb-r2-auA">
+                                                    <rect key="frame" x="25" y="13.5" width="30" height="53"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                                    <state key="normal" title="+"/>
+                                                    <connections>
+                                                        <action selector="addEmoji:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P0a-vL-qNs"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Hfb-r2-auA" firstAttribute="centerY" secondItem="98x-zy-MjC" secondAttribute="centerY" id="7mW-fF-5Zx"/>
+                                                <constraint firstItem="Hfb-r2-auA" firstAttribute="centerX" secondItem="98x-zy-MjC" secondAttribute="centerX" id="eXV-lB-pZf"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="80" height="80"/>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="EmojiInputCell" id="HVM-Xt-I7s" customClass="TextFieldCollectionViewCell" customModule="EmojiArt" customModuleProvider="target">
+                                        <rect key="frame" x="270" y="0.0" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="skg-dF-3fg">
+                                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="redraw" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NZH-88-n0W">
+                                                    <rect key="frame" x="8" y="15.5" width="64" height="49"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="49" id="DDI-0a-CkT"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="NZH-88-n0W" secondAttribute="trailing" constant="8" id="AkF-MM-Q8g"/>
+                                                <constraint firstItem="NZH-88-n0W" firstAttribute="centerY" secondItem="skg-dF-3fg" secondAttribute="centerY" id="AmJ-OR-qKK"/>
+                                                <constraint firstItem="NZH-88-n0W" firstAttribute="leading" secondItem="skg-dF-3fg" secondAttribute="leading" constant="8" id="yrf-jc-6my"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="80" height="80"/>
+                                        <connections>
+                                            <outlet property="textField" destination="NZH-88-n0W" id="T7A-7w-YCi"/>
+                                        </connections>
+                                    </collectionViewCell>
                                 </cells>
                             </collectionView>
                         </subviews>
