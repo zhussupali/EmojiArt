@@ -51,7 +51,7 @@ class EmojiArtView: UIView, UIDropInteractionDelegate {
     
     var scale : CGFloat = 0.75
     
-    private func addLabel(with attributedString: NSAttributedString, centeredAt point : CGPoint) {
+    func addLabel(with attributedString: NSAttributedString, centeredAt point : CGPoint) {
         let label = UILabel()
         label.attributedText = attributedString
         label.center = point
