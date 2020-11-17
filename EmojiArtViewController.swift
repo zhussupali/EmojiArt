@@ -39,15 +39,6 @@ class EmojiArtViewController: UIViewController, UIDropInteractionDelegate, UIScr
         scrollViewHeight.constant = scrollView.contentSize.height
     }
     
-//    MARK: - Custom methods
-    
-    @IBAction func save(_ sender: UIBarButtonItem) {
-        if let json = emojiArt?.json {
-            if let jsonString = String(data: json, encoding: .utf8){
-            print(jsonString)
-            }
-        }
-    }
     
     
 //    MARK: - Model
@@ -77,6 +68,42 @@ class EmojiArtViewController: UIViewController, UIDropInteractionDelegate, UIScr
                 }
             }
             
+        }
+    }
+    
+    @IBAction func save(_ sender: UIBarButtonItem) {
+        if let json = emojiArt?.json {
+            if let url = try? FileManager.default.url(
+                for: .documentDirectory,
+                in: .userDomainMask,
+                appropriateFor: nil,
+                create: true).appendingPathComponent("Untitled.json") {
+                
+                do {
+                    try json.write(to: url)
+                    print("saved succefully")
+                }
+                catch let error {
+                    print("couldn't save \(error)")
+                }
+            }
+        }
+    }
+    
+//    MARK: - Lifecycle methods
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        if let url = try? FileManager.default.url(
+            for: .documentDirectory,
+            in: .userDomainMask,
+            appropriateFor: nil,
+            create: true).appendingPathComponent("Untitled.json") {
+            
+            if let jsonData = try? Data(contentsOf: url) {
+                emojiArt = EmojiArt(json: jsonData)
+            }
         }
     }
     
